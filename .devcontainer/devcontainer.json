@@ -1,4 +1,14 @@
 {
-  "image": "ghcr.io/devcontainers/features/php:1",
-  "features": {}
+  "name": "Laravel + SQLite Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8000],
+  "postCreateCommand": "composer install && php artisan migrate",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  }
 }
